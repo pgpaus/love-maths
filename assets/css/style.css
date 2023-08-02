@@ -3,7 +3,7 @@
 body {
     background-color: white;
     font-family: "Raleway", sans-serif;
-    color: #445361;
+    color: #6195c6;
     text-align: center;
 }
 
@@ -22,7 +22,7 @@ body {
 /* --------- Game layout */
 
 .game-area {
-    background-color: #E6ECF0;
+    background-color: #d0eeeb;
     box-sizing: border-box;
     width: 85%;
     height: 65vh;
@@ -72,7 +72,7 @@ body {
 
 #answer-box {
     border: none;
-    color: #445361;
+    color: #e78e08;
     display: inline-block;
     height: 40px;
     width: 80px;
