@@ -1,23 +1,23 @@
 //Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
 
     for (let button of buttons) {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "submit") {
                 alert("You clicked submit!");
             } else {
                 let gameType = this.getAttribute("data-type");
                 runGame(gameType);
             }
-        })
+        });
     }
 
     runGame("addition");
-})
-    
+});
+
 /**
  * The main game "loop", called when the script is first loaded
  * and after the user's answer has been processed
@@ -41,9 +41,22 @@ function runGame(gameType) {
 function checkAnswer() {
 
 }
-
+/**
+ * Gets opperand (the numbers) and the operator (Plus, minus etc)
+ * directly from the DOM and returns the correct answer
+ */
 function calculateCorrectAnswer() {
 
+    let opperand1 = parseInt(document.getElementById('opperand1').innerText);
+    let opperand2 = parseInt(document.getElementById('opperand2').innerText);
+    let operator = document.getElementById("operator").innerText;
+
+    if (operator === "+") {
+        return [opperand1 + opperand2, "addition"];
+    }   else {
+        alert(`Unimplemented operator ${operator}`);
+        throw `unimplemented operator ${operator}. Aborting!`;
+    }
 }
 
 function incrementScore() {
@@ -70,6 +83,6 @@ function displayMultiplyQuestion() {
 
 }
 
-function displayDivisionQuestion () {
+function displayDivisionQuestion() {
 
 }
